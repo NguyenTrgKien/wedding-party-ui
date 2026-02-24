@@ -23,18 +23,18 @@ const NAV_ITEMS = [
 
   { type: "divider" },
 
-  { key: "menu", icon: <ForkOutlined />, label: "Thực đơn & Gói tiệc" },
-  { key: "customers", icon: <UserOutlined />, label: "Khách hàng" },
-  { key: "staff", icon: <TeamOutlined />, label: "Nhân sự" },
+  // { key: "menu", icon: <ForkOutlined />, label: "Thực đơn & Gói tiệc" },
+  // { key: "customers", icon: <UserOutlined />, label: "Khách hàng" },
+  // { key: "staff", icon: <TeamOutlined />, label: "Nhân sự" },
 
-  { type: "divider" },
+  // { type: "divider" },
 
-  { key: "finance", icon: <DollarOutlined />, label: "Thu chi & Công nợ" },
-  { key: "reports", icon: <BarChartOutlined />, label: "Báo cáo" },
+  // { key: "finance", icon: <DollarOutlined />, label: "Thu chi & Công nợ" },
+  // { key: "reports", icon: <BarChartOutlined />, label: "Báo cáo" },
 
-  { type: "divider" },
+  // { type: "divider" },
 
-  { key: "settings", icon: <SettingOutlined />, label: "Cài đặt" },
+  // { key: "settings", icon: <SettingOutlined />, label: "Cài đặt" },
 ];
 
 function AppSidebar({ activeKey, onSelect }) {
