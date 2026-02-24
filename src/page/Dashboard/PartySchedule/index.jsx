@@ -26,7 +26,8 @@ export const MOCK_BOOKINGS = [
     hall: {
       id: 1,
       name: "Sảnh Hoa Sen",
-      capacity: 30,
+      tables: 30,
+      capacity: 100,
       price: 5000000,
       description: "Sảnh nhỏ, ấm cúng, phù hợp tiệc gia đình",
       image:
@@ -50,7 +51,9 @@ export const MOCK_BOOKINGS = [
     hall: {
       id: 2,
       name: "Sảnh Hồng Ngọc",
-      capacity: 50,
+      tables: 50,
+      capacity: 100,
+
       price: 8000000,
       description: "Thiết kế sang trọng, phù hợp tiệc trung bình",
       image:
@@ -74,7 +77,9 @@ export const MOCK_BOOKINGS = [
     hall: {
       id: 3,
       name: "Sảnh Kim Cương",
-      capacity: 80,
+      tables: 80,
+      capacity: 100,
+
       price: 12000000,
       description: "Sảnh lớn, trần cao, sân khấu rộng",
       image:
@@ -98,7 +103,9 @@ export const MOCK_BOOKINGS = [
     hall: {
       id: 4,
       name: "Sảnh Hoàng Gia",
-      capacity: 120,
+      tables: 120,
+      capacity: 100,
+
       price: 18000000,
       description: "Phong cách châu Âu, dành cho tiệc cao cấp",
       image:
@@ -122,7 +129,9 @@ export const MOCK_BOOKINGS = [
     hall: {
       id: 4,
       name: "Sảnh Hoàng Gia",
-      capacity: 120,
+      tables: 120,
+      capacity: 100,
+
       price: 18000000,
       description: "Phong cách châu Âu, dành cho tiệc cao cấp",
       image:
@@ -146,7 +155,9 @@ export const MOCK_BOOKINGS = [
     hall: {
       id: 4,
       name: "Sảnh Hoàng Gia",
-      capacity: 120,
+      tables: 120,
+      capacity: 100,
+
       price: 18000000,
       description: "Phong cách châu Âu, dành cho tiệc cao cấp",
       image:
@@ -170,7 +181,9 @@ export const MOCK_BOOKINGS = [
     hall: {
       id: 4,
       name: "Sảnh Hoàng Gia",
-      capacity: 120,
+      tables: 120,
+      capacity: 100,
+
       price: 18000000,
       description: "Phong cách châu Âu, dành cho tiệc cao cấp",
       image:
@@ -194,7 +207,9 @@ export const MOCK_BOOKINGS = [
     hall: {
       id: 4,
       name: "Sảnh Hoàng Gia",
-      capacity: 120,
+      tables: 120,
+      capacity: 100,
+
       price: 18000000,
       description: "Phong cách châu Âu, dành cho tiệc cao cấp",
       image:
@@ -301,7 +316,7 @@ function StatCards({ data }) {
   );
 }
 
-export default function BookingPage() {
+export default function PartySchedule() {
   const { t } = useTheme();
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -491,7 +506,7 @@ export default function BookingPage() {
               lineHeight: 1,
             }}
           >
-            Đặt tiệc
+            Lịch đặt tiệc cưới
           </h2>
           <p style={{ margin: "6px 0 0", fontSize: 14, color: t.textMuted }}>
             Quản lý toàn bộ lịch đặt tiệc cưới

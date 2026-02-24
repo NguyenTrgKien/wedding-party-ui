@@ -7,8 +7,8 @@ import {
   PrinterOutlined,
   FileDoneOutlined,
 } from "@ant-design/icons";
-import { MOCK_BOOKINGS } from "../Booking";
-import { STATUS } from "../Booking/EditStatusModal";
+import { MOCK_BOOKINGS } from "../PartySchedule";
+import { STATUS } from "../PartySchedule/EditStatusModal";
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
@@ -116,7 +116,7 @@ function ContractPage() {
       className="rounded-lg h-[calc(100vh-10rem)] overflow-auto"
     >
       <div
-        className="sticky top-0 z-50 flex items-center justify-between px-8 py-3.5 border-b border-[#e8dfd0]"
+        className="sticky top-0 z-50 flex items-center justify-between px-[2rem] py-[1rem] border-b border-[#e8dfd0]"
         style={{ background: t.surface }}
       >
         <div className="flex items-center gap-4">

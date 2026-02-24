@@ -13,47 +13,62 @@ export const HALL_MOCKS = [
   {
     id: 1,
     name: "Sảnh Hoa Sen",
-    capacity: 30,
+    tables: 30,
+    capacity: 100,
+
     price: 5000000,
     description: "Sảnh nhỏ, ấm cúng, phù hợp tiệc gia đình",
     image:
       "https://luxurypalace.vn/wp-content/uploads/2024/10/241105-Luxury-Palace-068-1-1024x575.jpg",
+    status: "active",
   },
   {
     id: 2,
     name: "Sảnh Hồng Ngọc",
-    capacity: 50,
+    tables: 50,
+    capacity: 100,
+
     price: 8000000,
     description: "Thiết kế sang trọng, phù hợp tiệc trung bình",
     image:
       "https://asiana-plaza.com/wp-content/uploads/2021/03/trang-tri-sanh-tiec-cuoi-dep-3.jpg",
+    status: "active",
   },
   {
     id: 3,
     name: "Sảnh Kim Cương",
-    capacity: 80,
+    tables: 80,
+    capacity: 100,
+
     price: 12000000,
     description: "Sảnh lớn, trần cao, sân khấu rộng",
     image:
       "https://asiana-plaza.com/wp-content/uploads/2021/03/sanh-cuoi-dep-nhat-1.jpg",
+    status: "active",
   },
   {
     id: 4,
     name: "Sảnh Hoàng Gia",
-    capacity: 120,
+    tables: 120,
+    capacity: 100,
+
     price: 18000000,
     description: "Phong cách châu Âu, dành cho tiệc cao cấp",
     image:
       "https://mgs-storage.sgp1.digitaloceanspaces.com/gala/2024/01/sanh-tiec-autumn-to-chuc-tiec-tan-nien-tai-trung-tam-to-chuc-hoi-nghi-tphcm-gala-center.jpeg",
+    status: "active",
   },
   {
     id: 5,
     name: "Sảnh Sapphire",
-    capacity: 200,
+    tables: 200,
+    capacity: 100,
+
     price: 25000000,
     description: "Sảnh VIP, màn hình LED, âm thanh ánh sáng chuẩn show",
     image:
       "https://asiana-plaza.com/wp-content/uploads/2021/03/trang-tri-sanh-cuoi-dep-va-sang-trong-1.jpg",
+    status: "active",
   },
 ];
 
@@ -145,7 +160,7 @@ function SelectHallModal({
                     {hall.name}
                   </h3>
                   <Tag color="blue" style={{ marginTop: 8 }}>
-                    <TeamOutlined /> Sức chứa: {hall.capacity} người
+                    <TeamOutlined /> Sức chứa: {hall.table} người
                   </Tag>
                 </div>
 

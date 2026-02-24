@@ -70,7 +70,7 @@ function DetailOrderPage() {
       <div className="min-h-screen flex items-center justify-center bg-amber-50">
         <div className="text-center">
           <HeartOutlined className="text-5xl text-amber-400 mb-4" />
-          <h2 className="text-xl font-bold text-gray-700 mb-2">
+          <h2 className="text-xl font-semibold text-gray-700 mb-2">
             Không tìm thấy đơn đặt tiệc
           </h2>
           <p className="text-gray-400 mb-6">
@@ -94,7 +94,7 @@ function DetailOrderPage() {
       className="h-[calc(100vh-10rem)] overflow-auto"
     >
       <div
-        className="sticky top-0 z-50 flex items-center justify-between px-8 py-3.5 border-b border-[#e8dfd0]"
+        className="sticky top-0 z-50 flex items-center justify-between px-[2rem] py-[1rem] border-b border-[#e8dfd0]"
         style={{ background: t.surface }}
       >
         <div className="flex items-center gap-6">
@@ -102,7 +102,7 @@ function DetailOrderPage() {
             size="middle"
             iconPlacement="start"
             icon={<ArrowLeftOutlined />}
-            onClick={() => navigate("/dashboard/booking")}
+            onClick={() => navigate(-1)}
           >
             Quay lại
           </Button>
@@ -142,7 +142,7 @@ function DetailOrderPage() {
               <p className="text-[11px] uppercase tracking-[2px] font-semibold mb-1 m-0">
                 Mã đặt tiệc
               </p>
-              <p className="font-mono text-2xl font-bold text-[#d4aa78] tracking-widest m-0">
+              <p className="font-mono text-2xl font-semibold text-[#d4aa78] tracking-widest m-0">
                 {record.id}
               </p>
             </div>
@@ -163,7 +163,7 @@ function DetailOrderPage() {
                 <p className="text-[1.4rem] tracking-[1.8px] mb-1.5 m-0">
                   ♂ Chú rể
                 </p>
-                <p className="font-mono text-[18px] font-bold leading-tight m-0">
+                <p className="font-mono text-[18px] font-semibold leading-tight m-0">
                   {record.groom}
                 </p>
               </div>
@@ -171,7 +171,7 @@ function DetailOrderPage() {
                 <p className="text-[1.4rem] tracking-[1.8px] mb-1.5 m-0">
                   ♀ Cô dâu
                 </p>
-                <p className="font-mono text-[18px] font-bold leading-tight m-0">
+                <p className="font-mono text-[18px] font-semibold leading-tight m-0">
                   {record.bride}
                 </p>
               </div>
@@ -223,9 +223,11 @@ function DetailOrderPage() {
                 <Divider style={{ margin: "8px 0", borderColor: "#f0ece6" }} />
 
                 <div className="flex justify-between items-center py-1.5">
-                  <span className=" font-bold">Còn lại phải thanh toán</span>
+                  <span className=" font-semibold">
+                    Còn lại phải thanh toán
+                  </span>
                   <span
-                    className="font-mono text-2xl font-bold tabular-nums"
+                    className="font-mono text-2xl font-semibold tabular-nums"
                     style={{ color: remaining > 0 ? "#d4622a" : "#2db88a" }}
                   >
                     {fmt(remaining)}

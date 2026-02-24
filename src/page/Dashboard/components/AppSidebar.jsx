@@ -4,10 +4,8 @@ import { Avatar, Menu } from "antd";
 import {
   DashboardOutlined,
   BarChartOutlined,
-  FileTextOutlined,
   UserOutlined,
   SettingOutlined,
-  SafetyCertificateOutlined,
   CalendarOutlined,
   ForkOutlined,
   HomeOutlined,
@@ -20,9 +18,8 @@ const NAV_ITEMS = [
 
   { type: "divider" },
 
-  { key: "booking", icon: <FileTextOutlined />, label: "Đặt tiệc" },
-  { key: "calendar", icon: <CalendarOutlined />, label: "Lịch tiệc" },
-  { key: "hall", icon: <HomeOutlined />, label: "Sảnh & Ca tiệc" },
+  { key: "schedule", icon: <CalendarOutlined />, label: "Lịch tiệc" },
+  { key: "halls", icon: <HomeOutlined />, label: "Sảnh" },
 
   { type: "divider" },
 
