@@ -16,3 +16,17 @@ body {
   margin-bottom: 1px;
   margin-top: 10px;
 }
+
+.custom-steps .ant-steps-item-process .ant-steps-item-icon {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.custom-steps .ant-steps-item-finish .ant-steps-item-icon {
+  background-color: #52c41a;
+  border-color: #52c41a;
+}
+
+.custom-steps .ant-steps-item-title {
+  font-weight: 600;
+}

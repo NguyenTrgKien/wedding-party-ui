@@ -1,13 +1,10 @@
 import { useState } from "react";
 import {
-  Tabs,
   Table,
   Tag,
   Button,
   Input,
   Select,
-  Modal,
-  Form,
   Card,
   Statistic,
   Tooltip,
@@ -15,13 +12,8 @@ import {
   Row,
   Col,
   Typography,
-  Avatar,
   Badge,
-  Popconfirm,
-  InputNumber,
-  Divider,
   Empty,
-  Descriptions,
 } from "antd";
 import {
   PlusOutlined,
@@ -82,9 +74,6 @@ export default function HallAndShift() {
       return false;
     return true;
   });
-
-  const deleteHall = (id) =>
-    setHalls((prev) => prev.filter((h) => h.id !== id));
 
   const todayStr = dayjs().format("YYYY-MM-DD");
   const isHallBusyToday = (hallId) =>

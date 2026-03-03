@@ -518,8 +518,9 @@ export default function PartySchedule() {
           size="large"
           style={{ fontWeight: 600 }}
           onClick={() => {
-            setActionModal({ action: "create", dataUpdate: null });
-            setModalOpen(true);
+            // setActionModal({ action: "create", dataUpdate: null });
+            // setModalOpen(true);
+            navigate("/dashboard/schedule/booking");
           }}
         >
           Tạo đặt tiệc
@@ -597,12 +598,12 @@ export default function PartySchedule() {
         />
       </div>
 
-      <ActionModal
+      {/* <ActionModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         action={actionModal.action}
         dataEdit={actionModal.dataUpdate}
-      />
+      /> */}
 
       <EditStatusModal
         open={openEditStatusModal}
