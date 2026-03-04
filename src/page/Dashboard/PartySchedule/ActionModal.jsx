@@ -19,7 +19,6 @@ import {
   UserOutlined,
   PhoneOutlined,
   CheckCircleFilled,
-  ArrowRightOutlined,
   ArrowLeftOutlined,
   CrownOutlined,
   StarOutlined,
@@ -28,6 +27,9 @@ import {
 import Title from "antd/es/typography/Title";
 import { useState } from "react";
 import dayjs from "dayjs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const { TextArea } = Input;
 
@@ -92,6 +94,7 @@ function ActionModal() {
   const [form] = Form.useForm();
   const [selectedHall, setSelectedHall] = useState(null);
   const [bookingComplete, setBookingComplete] = useState(false);
+  const navigate = useNavigate();
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat("vi-VN", {
@@ -186,33 +189,57 @@ function ActionModal() {
                 guestCount: 50,
               }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-1 gap-8">
                 <Form.Item
-                  name="brideName"
-                  label="Tên cô dâu"
+                  name="full_name"
+                  label="Họ tên người đặt"
                   rules={[
-                    { required: true, message: "Vui lòng nhập tên cô dâu" },
+                    {
+                      required: true,
+                      message: "Vui lòng nhập họ tên người đặt tiệc",
+                    },
                   ]}
                 >
                   <Input
                     prefix={<UserOutlined className="text-gray-400" />}
-                    placeholder="Nhập tên cô dâu"
+                    placeholder="Nhập tên người đặt tiệc"
                     size="large"
                     style={{ height: 45 }}
                   />
                 </Form.Item>
 
                 <Form.Item
-                  name="groomName"
-                  label="Tên chú rể"
+                  name="event_type"
+                  label="Loại tiệc"
                   rules={[
-                    { required: true, message: "Vui lòng nhập tên chú rể" },
+                    { required: true, message: "Vui lòng nhập loại tiệc" },
                   ]}
                 >
                   <Input
-                    prefix={<UserOutlined className="text-gray-400" />}
-                    placeholder="Nhập tên chú rể"
-                    size="large"
+                    placeholder="Ví dụ: Tiệc cưới, tiệc sinh nhật..."
+                    style={{ height: 45 }}
+                  />
+                </Form.Item>
+
+                <Form.Item
+                  name="event_shift"
+                  label="Ca tiệc"
+                  rules={[{ required: true, message: "Vui lòng nhập ca tiệc" }]}
+                >
+                  <Input
+                    placeholder="Ví dụ: Sáng, chiều, tối..."
+                    style={{ height: 45 }}
+                  />
+                </Form.Item>
+                <Form.Item
+                  name="event_time"
+                  label="Giờ cụ thể"
+                  rules={[
+                    { required: true, message: "Vui lòng nhập giờ cụ thể" },
+                  ]}
+                >
+                  <Input
+                    placeholder="Ví dụ: 10:00, 18:00..."
                     style={{ height: 45 }}
                   />
                 </Form.Item>
@@ -543,8 +570,16 @@ function ActionModal() {
           animation: "fadeUp .35s ease both",
           background: t.surface,
         }}
-        className="p-6 md:p-8 rounded-lg min-h-screen"
+        className="relative p-6 md:p-8 rounded-lg min-h-screen"
       >
+        <button
+          className="absolute top-6 left-6 px-6 py-2 rounded-md bg-gray-200 hover:bg-gray-300 transition-colors duration-300"
+          style={{ color: t.text }}
+          onClick={() => navigate(-1)}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} />
+          <span>Quay lại</span>
+        </button>
         <div className="text-center mb-8">
           <Title level={2} style={{ color: "green", margin: 0 }}>
             Tạo lịch đặt tiệc cưới

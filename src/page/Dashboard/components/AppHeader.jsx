@@ -1,11 +1,44 @@
 import { Header } from "antd/es/layout/layout";
 import { useTheme } from "../../../context/themeContext";
-import { Avatar, Badge, Button, Select, Space } from "antd";
+import { Avatar, Badge, Button, Dropdown, Select, Space } from "antd";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { BellOutlined, PlusOutlined, SettingOutlined } from "@ant-design/icons";
+import {
+  BellOutlined,
+  LogoutOutlined,
+  SettingOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 function AppHeader({ currentTheme, onThemeChange }) {
   const { t } = useTheme();
+
+  const items = [
+    {
+      key: "profile",
+      icon: <UserOutlined />,
+      label: "Thông tin tài khoản",
+    },
+    {
+      key: "settings",
+      icon: <SettingOutlined />,
+      label: "Cài đặt",
+    },
+    { type: "divider" },
+    {
+      key: "logout",
+      icon: <LogoutOutlined />,
+      label: "Đăng xuất",
+      danger: true,
+    },
+  ];
+
+  const handleMenuClick = ({ key }) => {
+    if (key === "logout") {
+      localStorage.removeItem("user");
+      window.location.href = "/dashboard/login";
+    }
+  };
+
   return (
     <Header
       style={{
@@ -54,12 +87,45 @@ function AppHeader({ currentTheme, onThemeChange }) {
         <Badge dot color="red" offset={[-4, 4]}>
           <Button icon={<BellOutlined />} />
         </Badge>
-        <Button icon={<SettingOutlined />} />
-        <Avatar
-          size={36}
-          src="https://hoiquancaothu.com/images/skins/lien-quan/zuka-gau-nhoi-bong.jpg?q=1?v=2.0.0.1"
-          alt="avatar admin"
-        />
+        {/* <div className="cursor-pointer relative">
+          <Avatar
+            size={36}
+            src="https://hoiquancaothu.com/images/skins/lien-quan/zuka-gau-nhoi-bong.jpg?q=1?v=2.0.0.1"
+            alt="avatar admin"
+          />
+          <div className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full">
+            <div className="text-xs text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              Đăng xuất
+            </div>
+          </div>
+        </div> */}
+        <Dropdown
+          menu={{ items, onClick: handleMenuClick }}
+          placement="bottomRight"
+          trigger={["click"]}
+          arrow
+        >
+          <div className="cursor-pointer relative">
+            <Avatar
+              size={36}
+              src="https://hoiquancaothu.com/images/skins/lien-quan/zuka-gau-nhoi-bong.jpg"
+              alt="avatar admin"
+            />
+            {/* Dot online */}
+            <span
+              style={{
+                position: "absolute",
+                bottom: 0,
+                right: 0,
+                width: 10,
+                height: 10,
+                background: "#22c55e",
+                borderRadius: "50%",
+                border: "2px solid #fff",
+              }}
+            />
+          </div>
+        </Dropdown>
       </Space>
     </Header>
   );

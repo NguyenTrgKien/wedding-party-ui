@@ -24,7 +24,6 @@ import {
   FireOutlined,
   GiftOutlined,
   DollarOutlined,
-  MenuOutlined,
 } from "@ant-design/icons";
 import { useState, useMemo } from "react";
 import { MenuItem } from "../../../types/menu.type";
