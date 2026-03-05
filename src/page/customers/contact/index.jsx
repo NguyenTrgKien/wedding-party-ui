@@ -10,7 +10,6 @@ import {
   faAngleRight,
   faChampagneGlasses,
 } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
 
 const contacts = [
   {
@@ -49,14 +48,12 @@ function ContactPage() {
     message: "",
   });
   const [sent, setSent] = useState(false);
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = () => {
-    // TODO: gọi API
     setSent(true);
   };
 
@@ -64,7 +61,6 @@ function ContactPage() {
     <>
       <Header isBg={true} />
 
-      {/* ── HERO ── */}
       <div className="relative w-full h-[45rem] overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1600&q=80"
@@ -87,7 +83,6 @@ function ContactPage() {
       </div>
 
       <div className="px-[20rem] w-full h-auto pb-[6rem]">
-        {/* ── 4 Ô THÔNG TIN LIÊN HỆ ── */}
         <div className="grid grid-cols-4 gap-6 py-[5rem] border-b border-gray-100">
           {contacts.map((c, i) => (
             <div
@@ -111,9 +106,7 @@ function ContactPage() {
           ))}
         </div>
 
-        {/* ── FORM + BẢN ĐỒ ── */}
         <div className="flex gap-[5rem] pt-[5rem]">
-          {/* Form */}
           <div className="flex-1">
             <h2 className="text-[2rem] tracking-wide text-[#d0690e] uppercase">
               Gửi yêu cầu tư vấn
@@ -151,7 +144,6 @@ function ContactPage() {
               </div>
             ) : (
               <div className="flex flex-col gap-5">
-                {/* Hàng 1 */}
                 <div className="flex gap-4">
                   <div className="flex-1 flex flex-col gap-2">
                     <label className="text-[1.3rem] font-semibold text-[#5a4a3a] uppercase tracking-widest">
@@ -179,7 +171,6 @@ function ContactPage() {
                   </div>
                 </div>
 
-                {/* Hàng 2 */}
                 <div className="flex gap-4">
                   <div className="flex-1 flex flex-col gap-2">
                     <label className="text-[1.3rem] font-semibold text-[#5a4a3a] uppercase tracking-widest">
@@ -207,7 +198,6 @@ function ContactPage() {
                   </div>
                 </div>
 
-                {/* Hàng 3 — Số khách */}
                 <div className="flex flex-col gap-2">
                   <label className="text-[1.3rem] font-semibold text-[#5a4a3a] uppercase tracking-widest">
                     Số lượng khách dự kiến
@@ -234,7 +224,6 @@ function ContactPage() {
                   </div>
                 </div>
 
-                {/* Hàng 4 — Ghi chú */}
                 <div className="flex flex-col gap-2">
                   <label className="text-[1.3rem] font-semibold text-[#5a4a3a] uppercase tracking-widest">
                     Ghi chú thêm
@@ -261,9 +250,7 @@ function ContactPage() {
             )}
           </div>
 
-          {/* Bản đồ + thông tin phụ */}
           <div className="w-[50rem] flex flex-col gap-6">
-            {/* Google Maps embed */}
             <div className="rounded-3xl overflow-hidden shadow-xl h-[40rem]">
               <iframe
                 title="Bản đồ WeddingKPVT"
@@ -276,7 +263,6 @@ function ContactPage() {
               />
             </div>
 
-            {/* Giờ hoạt động */}
             <div className="bg-white rounded-2xl shadow-md p-7">
               <h3 className="text-[1.6rem] font-bold text-[#d0690e] uppercase tracking-widest mb-4">
                 Giờ hoạt động

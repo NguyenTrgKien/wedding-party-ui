@@ -1,10 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PhoneOutlined, MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faAngleRight,
+  faArrowRightFromBracket,
+  faBorderAll,
+  faClose,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
+import { useUser } from "../../../../hooks/useUser";
+import thai from "../../../../assets/images/thai.jpg";
 
 const NAV_LINKS = [
   { label: "Giới thiệu", href: "/about" },
@@ -16,6 +25,10 @@ const NAV_LINKS = [
 function Header({ isBg }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { user } = useUser();
+  const elementRef = useRef(null);
+  const [showPersonalModal, setShowPersonalModal] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isBg) {
@@ -27,6 +40,24 @@ function Header({ isBg }) {
       return () => window.removeEventListener("scroll", fn);
     }
   }, [isBg]);
+
+  useEffect(() => {
+    const handleClickOutSide = (e) => {
+      if (elementRef.current && !elementRef.current.contains(e.target)) {
+        setShowPersonalModal(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutSide);
+    return () => {
+      document.removeEventListener("click", handleClickOutSide);
+    };
+  });
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/");
+  };
 
   return (
     <>
@@ -68,19 +99,47 @@ function Header({ isBg }) {
               <PhoneOutlined />
               <span>035 7124 853</span>
             </a>
-            <Button
-              type="primary"
-              href="#contact"
-              style={{
-                background: "#d97706",
-                border: "none",
-                borderRadius: 6,
-                fontWeight: 600,
-                padding: "20px 24px",
-              }}
-            >
-              Đặt tiệc ngay
-            </Button>
+            {user ? (
+              <div
+                className="relative flex items-center gap-2.5 text-gray-500 cursor-pointer bg-white border border-gray-300 p-1 rounded-full"
+                ref={elementRef}
+                onClick={() => setShowPersonalModal(true)}
+              >
+                <img
+                  src={thai}
+                  alt="Avatar"
+                  className="w-[3rem] rounded-full"
+                />
+                <FontAwesomeIcon icon={faAngleDown} />
+
+                {showPersonalModal && (
+                  <div className="absolute top-[calc(100%+1rem)] right-0 w-[30rem] auto bg-white rounded-xl shadow-xl divide-y-1 divide-gray-200">
+                    <div
+                      className="rounded-tl-xl rounded-tr-xl p-6 p-6 flex items-center gap-4 hover:bg-gray-100 "
+                      onClick={() => navigate("/orders")}
+                    >
+                      <FontAwesomeIcon icon={faBorderAll} />
+                      Xem đơn đặt tiệc
+                    </div>
+                    <div
+                      className="rounded-bl-xl rounded-br-xl p-6 flex items-center gap-4 hover:bg-gray-100 text-red-500"
+                      onClick={handleLogout}
+                    >
+                      <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                      Đăng xuất
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                to={`/auth`}
+                className="px-6 py-4 bg-red-500 text-white text-[1.4rem] rounded-xl hover:bg-red-600 transition-colors duration-300"
+              >
+                Đăng nhập
+                <FontAwesomeIcon icon={faAngleRight} />
+              </Link>
+            )}
           </div>
 
           <button

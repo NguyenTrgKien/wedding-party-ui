@@ -1,14 +1,14 @@
 import { Navigate } from "react-router-dom";
 import { useUser } from "../hooks/useUser";
 
-const PrivateRoute = ({ children }) => {
+const PrivateRouteUser = ({ children }) => {
   const { user, isLoading } = useUser();
 
   if (isLoading) return <div>Loading...</div>;
 
-  if (!user) return <Navigate to="/dashboard/login" />;
+  if (!user) return <Navigate to="/" />;
 
   return children;
 };
 
-export default PrivateRoute;
+export default PrivateRouteUser;

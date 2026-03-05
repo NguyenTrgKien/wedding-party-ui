@@ -13,7 +13,7 @@ function LoginAdmin() {
     await new Promise((r) => setTimeout(r, 1200));
     setLoading(false);
     if (values.email === "admin@wedding.vn" && values.password === "admin123") {
-      localStorage.setItem("user", JSON.stringify({ email: values.email }));
+      localStorage.setItem("admin", JSON.stringify({ email: values.email }));
       navigate("/dashboard");
       message.success("Đăng nhập thành công!");
     } else {

@@ -11,16 +11,17 @@ import Customer from "./page/Dashboard/customer";
 import Staff from "./page/Dashboard/Staff";
 import DetailCustomer from "./page/Dashboard/customer/DetailCustomer";
 import DetailStaff from "./page/Dashboard/Staff/DetailStaff";
-import PrivateRoute from "./components/privateRoute";
+import PrivateRoute from "./components/privateRouteAdmin";
 import LoginAdmin from "./page/Dashboard/auth/Login";
 import CustomerPage from "./page/customers";
 import HomePage from "./page/customers/HomePage";
-import Login from "./page/customers/auth/login";
-import Register from "./page/customers/auth/register";
 import AboutPage from "./page/customers/about";
 import HallPage from "./page/customers/hall";
 import MenuPage from "./page/customers/menu";
 import ContactPage from "./page/customers/contact";
+import LoginAndRegister from "./page/customers/auth/loginandregister";
+import PrivateRouteAdmin from "./components/privateRouteAdmin";
+import OrderPage from "./page/customers/history";
 
 function App() {
   return (
@@ -32,18 +33,18 @@ function App() {
       <Route path="/halls" element={<HallPage />} />
       <Route path="/menu" element={<MenuPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/orders" element={<OrderPage />} />
 
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/auth" element={<LoginAndRegister />} />
 
       <Route path="/dashboard/login" element={<LoginAdmin />} />
 
       <Route
         path="/dashboard"
         element={
-          <PrivateRoute>
+          <PrivateRouteAdmin>
             <Dashboard />
-          </PrivateRoute>
+          </PrivateRouteAdmin>
         }
       >
         <Route index element={<DashboardPage />} replace />
