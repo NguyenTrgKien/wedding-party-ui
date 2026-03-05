@@ -16,7 +16,8 @@ function Banner() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/15" />
 
-      <div className="relative z-10 xl:px-[15rem] sm:px-[5rem] px-[2rem] mx-auto px-6 w-full pt-28 pb-20">
+      <div className="relative z-10 xl:px-[15rem] sm:px-[5rem] px-[2rem] mx-auto w-full pt-28 pb-20">
+        {/* ↑ bỏ px-6 thừa */}
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-5 fade-1">
             <span className="w-8 h-px bg-amber-400" />
@@ -26,16 +27,16 @@ function Banner() {
           </div>
           <h1
             className="text-white font-bold leading-tight mb-6 fade-2"
-            style={{
-              fontSize: "clamp(2.8rem,6vw,5rem)",
-            }}
+            style={{ fontSize: "clamp(2.8rem,6vw,5rem)" }}
           >
             Nơi tình yêu trở thành{" "}
-            <em className="text-amber-300 not-italic">kỹ niệm</em> vĩnh cửu
+            <em className="text-amber-300 not-italic">kỷ niệm</em> vĩnh cửu
+            {/* ↑ kỷ niệm */}
           </h1>
           <p className="text-white/65 text-[1.4rem] font-light leading-relaxed mb-10 max-w-xl fade-3">
             Hơn 15 năm đồng hành cùng hàng nghìn cặp đôi, WeddingKPVT mang đến
-            không gian tiệc cưới hoàn hảo nhất tại TP.HCM.
+            không gian tiệc cưới hoàn hảo nhất tại Cái Răng, Cần Thơ.
+            {/* ↑ Cái Răng, Cần Thơ */}
           </p>
           <div className="flex flex-wrap gap-4 fade-4">
             <Button
@@ -55,7 +56,7 @@ function Banner() {
               Đặt tiệc ngay
             </Button>
             <button
-              className="px-8 py-3 rounded-md text-white/80 border border-white/30  font-medium hover:border-amber-400 hover:text-amber-300 transition-colors bg-transparent cursor-pointer"
+              className="px-8 py-3 rounded-md text-white/80 border border-white/30 font-medium hover:border-amber-400 hover:text-amber-300 transition-colors bg-transparent cursor-pointer"
               onClick={() =>
                 document
                   .querySelector("#halls")
@@ -71,7 +72,7 @@ function Banner() {
           {[
             ["15+", "Năm kinh nghiệm"],
             ["3.800+", "Tiệc cưới thành công"],
-            ["3", "Sanh tiệc cao cấp"],
+            ["3", "Sảnh tiệc cao cấp"], // ↑ Sảnh
             ["98%", "Khách hàng hài lòng"],
           ].map(([n, l], i) => (
             <div key={i}>
@@ -88,13 +89,12 @@ function Banner() {
           ))}
         </div>
       </div>
-
       <a
         href="#about"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/40 text-xs tracking-widest no-underline hover:text-amber-300 transition-colors fade-6"
       >
         <ArrowDownOutlined />
-        <span>Kham pha</span>
+        <span>Khám phá</span>
       </a>
     </section>
   );

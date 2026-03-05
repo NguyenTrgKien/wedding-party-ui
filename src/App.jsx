@@ -17,6 +17,10 @@ import CustomerPage from "./page/customers";
 import HomePage from "./page/customers/HomePage";
 import Login from "./page/customers/auth/login";
 import Register from "./page/customers/auth/register";
+import AboutPage from "./page/customers/about";
+import HallPage from "./page/customers/hall";
+import MenuPage from "./page/customers/menu";
+import ContactPage from "./page/customers/contact";
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
       <Route path="/" element={<CustomerPage />}>
         <Route index element={<HomePage />} />
       </Route>
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/halls" element={<HallPage />} />
+      <Route path="/menu" element={<MenuPage />} />
+      <Route path="/contact" element={<ContactPage />} />
 
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />

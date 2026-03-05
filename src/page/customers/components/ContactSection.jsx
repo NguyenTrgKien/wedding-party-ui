@@ -42,7 +42,7 @@ function ContactSection() {
         <p className="text-white/50 text-base mb-10 font-light">
           Liên hệ ngay hôm nay để được tư vấn miễn phí và nhận ưu đãi đặc biệt.
         </p>
-        <div className="flex flex-wrap items-center gap-4 justify-center mb-14">
+        <div className="flex flex-col flex-wrap items-center gap-4 justify-center mb-14">
           <button
             size="large"
             style={{
@@ -60,13 +60,13 @@ function ContactSection() {
             Đặt lịch tư vấn miễn phí
           </button>
           <button className="px-8 h-12 rounded-md text-white/70 border border-white/30  hover:border-amber-400 hover:text-amber-300 transition-colors bg-transparent cursor-pointer">
-            📞 028 3812 3456
+            📞 035 7124 853
           </button>
         </div>
         <div className="flex flex-wrap justify-center gap-8 text-white/40">
           <div className="flex items-center gap-2">
             <EnvironmentOutlined className="text-amber-400" />
-            123 Le Loi, Q.1, TP.HCM
+            đường số 5, khu dân cư Thạnh Mỹ, Q. Cái Răng, TP. Cần Thơ
           </div>
           <div className="flex items-center gap-2">
             <ClockCircleOutlined className="text-amber-400" />

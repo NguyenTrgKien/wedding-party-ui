@@ -34,13 +34,13 @@ function AboutSection() {
           }}
         >
           Không gian tiệc cưới <em className="text-amber-600">đẳng cấp nhất</em>{" "}
-          Sài Gòn
+          Cái Răng, Cần Thơ
         </h2>
         <div className="w-10 h-0.5 bg-amber-500 mb-5 rounded" />
         <p className="text-gray-500 text-[1.4rem] leading-relaxed font-light mb-4">
-          WeddingKPVT tòa lạc tại trung tâm TP.HCM với tổng diện tích hơn
-          8.000m2, bao gồm 3 sảnh tiệc sang trọng có sức chứa từ 200 đến 1.000
-          khách, cùng
+          WeddingKPVT tọa lạc tại trung tâm quận Cái Răng, TP. Cần Thơ với tổng
+          diện tích hơn 8.000m², bao gồm 3 sảnh tiệc sang trọng có sức chứa từ
+          200 đến 1.000 khách, cùng
         </p>
         <p className="text-gray-500 text-[1.4rem] leading-relaxed font-light mb-7">
           Với đội ngũ hơn 200 nhân viên chuyên nghiệp, từ bếp trưởng 5 sao đến

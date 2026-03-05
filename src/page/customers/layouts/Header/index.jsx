@@ -7,22 +7,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 const NAV_LINKS = [
-  { label: "Giới thiệu", href: "#about" },
-  { label: "ảnh tiệc", href: "#halls" },
-  { label: "Thực đơn", href: "#menu" },
-  { label: "Dịch vụ", href: "#services" },
-  { label: "Liên hệ", href: "#contact" },
+  { label: "Giới thiệu", href: "/about" },
+  { label: "Sảnh tiệc", href: "/halls" },
+  { label: "Thực đơn", href: "/menu" },
+  { label: "Liên hệ", href: "/contact" },
 ];
 
-function Header() {
+function Header({ isBg }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", fn);
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
+    if (isBg) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setScrolled(true);
+    } else {
+      const fn = () => setScrolled(window.scrollY > 60);
+      window.addEventListener("scroll", fn);
+      return () => window.removeEventListener("scroll", fn);
+    }
+  }, [isBg]);
 
   return (
     <>
@@ -33,7 +37,7 @@ function Header() {
           className="xl:px-[15rem] sm:px-[5rem] px-[2rem] mx-auto px-6 flex items-center justify-between"
           style={{ height: 72 }}
         >
-          <a href="#" className="flex items-center gap-2 no-underline">
+          <a href="/" className="flex items-center gap-2 no-underline">
             <div className="w-9 h-9 bg-amber-500 rounded-lg flex items-center justify-center  leading-none">
               💍
             </div>
