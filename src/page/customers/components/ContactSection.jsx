@@ -3,9 +3,12 @@ import {
   EnvironmentOutlined,
   ClockCircleOutlined,
 } from "@ant-design/icons";
-import { Button } from "antd";
+import { useState } from "react";
+import ConsultationModal from "./ConsultationModal";
+import { AnimatePresence } from "framer-motion";
 
 function ContactSection() {
+  const [showConsultation, setShowConsultation] = useState(false);
   return (
     <section
       id="contact"
@@ -30,11 +33,10 @@ function ContactSection() {
         <h2
           className="text-white font-bold leading-tight mb-4"
           style={{
-            fontFamily: "Georgia,serif",
             fontSize: "clamp(2rem,4vw,3.2rem)",
           }}
         >
-          San sang tao nen{" "}
+          Sáng tạo nên{" "}
           <em className="text-amber-300 not-italic">kỹ niệm không thể quên?</em>
         </h2>
         <p className="text-white/50 text-base mb-10 font-light">
@@ -53,6 +55,7 @@ function ContactSection() {
               fontWeight: 600,
               fontSize: 15,
             }}
+            onClick={() => setShowConsultation(true)}
           >
             Đặt lịch tư vấn miễn phí
           </button>
@@ -75,6 +78,12 @@ function ContactSection() {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {showConsultation && (
+          <ConsultationModal onClose={() => setShowConsultation(false)} />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

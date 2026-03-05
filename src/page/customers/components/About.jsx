@@ -30,7 +30,6 @@ function AboutSection() {
         <h2
           className="text-gray-900 font-bold leading-tight mb-4"
           style={{
-            fontFamily: "Georgia,serif",
             fontSize: "2.8rem",
           }}
         >

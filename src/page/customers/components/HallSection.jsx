@@ -32,12 +32,11 @@ function HallsSection() {
   const ref = useReveal();
   return (
     <section id="halls" className="py-24 px-6 bg-white">
-      <div className="px-[15rem] mx-auto">
+      <div className="xl:px-[15rem] sm:px-[5rem] px-[2rem] mx-auto">
         <div ref={ref} className="reveal text-center mb-16">
           <h2
             className="font-semibold"
             style={{
-              fontFamily: "Georgia,serif",
               fontSize: "2.8rem",
             }}
           >

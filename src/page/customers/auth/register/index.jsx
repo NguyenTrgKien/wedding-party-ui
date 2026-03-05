@@ -265,7 +265,12 @@ function Register() {
       <style>{styles}</style>
       <div
         className="wedding-auth-root wedding-bg"
-        style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "100vh",
+        }}
       >
         {[200, 320, 460].map((size, i) => (
           <div

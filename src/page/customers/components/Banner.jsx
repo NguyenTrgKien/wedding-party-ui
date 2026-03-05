@@ -16,7 +16,7 @@ function Banner() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/15" />
 
-      <div className="relative z-10 px-[15rem] mx-auto px-6 w-full pt-28 pb-20">
+      <div className="relative z-10 xl:px-[15rem] sm:px-[5rem] px-[2rem] mx-auto px-6 w-full pt-28 pb-20">
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-5 fade-1">
             <span className="w-8 h-px bg-amber-400" />
@@ -27,7 +27,6 @@ function Banner() {
           <h1
             className="text-white font-bold leading-tight mb-6 fade-2"
             style={{
-              fontFamily: "Georgia,serif",
               fontSize: "clamp(2.8rem,6vw,5rem)",
             }}
           >
@@ -78,7 +77,7 @@ function Banner() {
             <div key={i}>
               <div
                 className="text-amber-300 font-bold"
-                style={{ fontFamily: "Georgia,serif", fontSize: "2rem" }}
+                style={{ fontSize: "2rem" }}
               >
                 {n}
               </div>

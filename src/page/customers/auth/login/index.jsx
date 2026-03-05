@@ -341,8 +341,15 @@ function Login() {
   return (
     <>
       <style>{styles}</style>
-      <div className="wedding-auth-root wedding-bg" style={{ display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
-        
+      <div
+        className="wedding-auth-root wedding-bg"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "100vh",
+        }}
+      >
         {petals.map((p) => (
           <div
             key={p.id}
@@ -414,11 +421,24 @@ function Login() {
               />
             </Form.Item>
 
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
-              <Form.Item name="remember" valuePropName="checked" style={{ margin: 0 }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: 24,
+              }}
+            >
+              <Form.Item
+                name="remember"
+                valuePropName="checked"
+                style={{ margin: 0 }}
+              >
                 <Checkbox>Ghi nhớ đăng nhập</Checkbox>
               </Form.Item>
-              <a href="#" className="forgot-link">Quên mật khẩu?</a>
+              <a href="#" className="forgot-link">
+                Quên mật khẩu?
+              </a>
             </div>
 
             <Form.Item style={{ margin: 0 }}>

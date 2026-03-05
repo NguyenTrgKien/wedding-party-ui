@@ -10,10 +10,6 @@ function SectionHeading({ label, title, subtitle, light = false }) {
       </div>
       <h2
         className={`font-bold leading-tight ${light ? "text-white" : "text-gray-900"}`}
-        style={{
-          fontFamily: "Georgia,serif",
-          fontSize: "clamp(1.9rem,3.5vw,2.8rem)",
-        }}
       >
         {title}
       </h2>

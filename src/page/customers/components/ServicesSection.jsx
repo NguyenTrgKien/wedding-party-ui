@@ -39,12 +39,11 @@ function ServicesSection() {
 
   return (
     <section id="services" className="py-24 px-6 bg-white">
-      <div className="px-[15rem] mx-auto">
+      <div className="xl:px-[15rem] sm:px-[5rem] px-[2rem] mx-auto">
         <div ref={ref} className="reveal text-center mb-16">
           <h2
             className="font-semibold"
             style={{
-              fontFamily: "Georgia,serif",
               fontSize: "2.8rem",
             }}
           >
@@ -66,10 +65,7 @@ function ServicesSection() {
               >
                 <div className="text-4xl mb-4">{s.icon}</div>
 
-                <h4
-                  className="text-gray-900 text-[1.6rem] font-semibold mb-2"
-                  style={{ fontFamily: "Georgia,serif" }}
-                >
+                <h4 className="text-gray-900 text-[1.6rem] font-semibold mb-2">
                   {s.title}
                 </h4>
 

@@ -49,12 +49,11 @@ function MenuSection() {
 
   return (
     <section id="menu" className="py-24 px-6 bg-stone-50">
-      <div className="px-[15rem] mx-auto">
+      <div className="xl:px-[15rem] sm:px-[5rem] px-[2rem] mx-auto">
         <div ref={ref} className="reveal text-center mb-16">
           <h2
             className="font-semibold"
             style={{
-              fontFamily: "Georgia,serif",
               fontSize: "2.8rem",
             }}
           >
@@ -97,7 +96,6 @@ function MenuSection() {
 
                 <h3
                   className="text-gray-900 text-[1.6rem] font-bold mb-1"
-                  style={{ fontFamily: "Georgia,serif" }}
                 >
                   {m.name}
                 </h3>

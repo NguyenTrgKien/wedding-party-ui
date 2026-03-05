@@ -41,7 +41,6 @@ function App() {
         <Route index element={<DashboardPage />} replace />
         <Route path="schedule" element={<PartySchedule />} />
         <Route path="schedule/booking" element={<ActionModal />} />
-        {/* <Route path="booking" element={<BookingPage />} /> */}
         <Route path="schedule/detail/:id" element={<DetailOrder />} />
         <Route path="contract/:id" element={<ContractPage />} />
         <Route path="halls" element={<HallAndShift />} />
