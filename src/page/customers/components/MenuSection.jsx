@@ -94,9 +94,7 @@ function MenuSection() {
                   {m.tag}
                 </Tag>
 
-                <h3
-                  className="text-gray-900 text-[1.6rem] font-bold mb-1"
-                >
+                <h3 className="text-gray-900 text-[1.6rem] font-bold mb-1">
                   {m.name}
                 </h3>
 

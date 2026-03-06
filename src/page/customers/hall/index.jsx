@@ -278,7 +278,7 @@ function HallPage() {
           alt="wedding hall hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center px-[20rem]">
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center xl:px-[15rem] sm:px-[5rem] px-[2rem]  px-6">
           <h2 className="text-[2rem] tracking-wide uppercase opacity-80">
             không gian tổ chức tiệc
           </h2>
@@ -293,7 +293,7 @@ function HallPage() {
         </div>
       </div>
 
-      <div className="px-[20rem] w-full h-auto pb-[6rem]">
+      <div className="xl:px-[15rem] sm:px-[5rem] px-[2rem]  px-6 w-full h-auto pb-[6rem]">
         {/* ── TIÊU ĐỀ SECTION ── */}
         <div className="text-center py-[5rem] border-b border-gray-100">
           <h2 className="text-[2rem] tracking-wide text-[#d0690e] uppercase">
@@ -309,7 +309,7 @@ function HallPage() {
         </div>
 
         {/* ── DANH SÁCH SẢNH ── */}
-        <div className="grid grid-cols-3 gap-8 pt-[4rem]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-[4rem]">
           {halls.map((hall) => (
             <HallCard
               key={hall.id}
@@ -320,24 +320,7 @@ function HallPage() {
           ))}
         </div>
 
-        {/* ── CHI TIẾT SẢNH KHI CHỌN ── */}
         <HallDetail hall={selectedHall} onClose={() => setSelectedHall(null)} />
-
-        {/* ── CTA ── */}
-        <div className="mt-[5rem] bg-[#d0690e] rounded-3xl p-[4rem] flex items-center justify-between text-white">
-          <div>
-            <h3 className="text-[2.5rem] font-bold uppercase">
-              Chưa biết chọn sảnh nào?
-            </h3>
-            <p className="text-[1.5rem] opacity-80 mt-2">
-              Đội ngũ tư vấn của chúng tôi sẵn sàng hỗ trợ bạn miễn phí.
-            </p>
-          </div>
-          <button className="flex items-center gap-3 bg-white text-[#d0690e] px-10 py-4 rounded-xl font-semibold text-[1.5rem] hover:bg-orange-50 transition-all duration-300 uppercase tracking-wide shadow-md whitespace-nowrap">
-            <span>Tư vấn miễn phí</span>
-            <FontAwesomeIcon icon={faAngleRight} />
-          </button>
-        </div>
       </div>
       <Footer />
     </>

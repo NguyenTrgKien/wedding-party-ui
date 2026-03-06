@@ -135,7 +135,7 @@ function MenuPage() {
   return (
     <>
       <Header isBg={true} />
-      <div className="px-[20rem] w-full h-auto pt-[10rem] pb-[5rem]">
+      <div className="xl:px-[15rem] sm:px-[5rem] px-[2rem] w-full h-auto pt-[10rem] pb-[5rem]">
         <div className="text-center">
           <h2 className="text-[2rem] tracking-wide text-[#d0690e] uppercase text-center">
             Nhà hàng tiệc cưới
@@ -163,18 +163,18 @@ function MenuPage() {
           </button>
         </div>
 
-        <div className="flex items-start justify-center gap-[2rem]">
-          {current === "package" ? (
-            packages.map((pkg) => {
+        {current === "package" ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem]">
+            {packages.map((pkg) => {
               const pkgDishes = dishes.filter((d) => pkg.dishes.includes(d.id));
               return (
                 <div
                   key={pkg.id}
-                  className={`relative rounded-3xl overflow-hidden transition-all duration-500 ${pkg.highlight ? "shadow-2xl scale-[1.03]" : "shadow-lg"}`}
+                  className={`relative h-full flex flex-col rounded-3xl overflow-hidden transition-all duration-500 shadow-lg`}
                 >
                   <div
                     style={{ background: pkg.gradient }}
-                    className="p-7 text-white relative"
+                    className="p-7 text-white relative w-full h-[15rem]"
                   >
                     <p className="text-[1.4rem] tracking-[0.25em] uppercase opacity-80 mb-1">
                       {pkg.subtitle}
@@ -193,7 +193,7 @@ function MenuPage() {
                     <p className="mt-2 text-[1.4rem] opacity-70">{pkg.note}</p>
                   </div>
 
-                  <div className="bg-white p-6">
+                  <div className="flex-1 w-full p-6 h-auto flex flex-col">
                     <p className="text-[#5a4a3a] text-[1.4rem] font-semibold mb-3 uppercase tracking-widest">
                       {pkgDishes.length} món bao gồm
                     </p>
@@ -211,17 +211,19 @@ function MenuPage() {
                         </li>
                       ))}
                     </ul>
-                    <button
-                      className="flex items-center justify-between text-[1.2rem] hover:border-gray-500 cursor-pointer px-8 py-2 rounded-full border border-gray-300 transition-colors duration-300"
-                      onClick={() =>
-                        setOpenDishes((prev) =>
-                          prev?.id === pkg.id ? null : pkg,
-                        )
-                      }
-                    >
-                      <span>Xem món ăn</span>
-                      <FontAwesomeIcon icon={faAngleRight} />
-                    </button>
+                    <div>
+                      <button
+                        className="flex items-center justify-between text-[1.2rem] hover:border-gray-500 cursor-pointer px-8 py-2 rounded-full border border-gray-300 transition-colors duration-300 mb-8"
+                        onClick={() =>
+                          setOpenDishes((prev) =>
+                            prev?.id === pkg.id ? null : pkg,
+                          )
+                        }
+                      >
+                        <span>Xem món ăn</span>
+                        <FontAwesomeIcon icon={faAngleRight} />
+                      </button>
+                    </div>
 
                     <button
                       style={{
@@ -231,50 +233,50 @@ function MenuPage() {
                         borderColor: pkg.color,
                         color: pkg.highlight ? "white" : pkg.color,
                       }}
-                      className="mt-5 w-full py-3 rounded-xl font-semibold text-[1.4rem] border-2 transition-all duration-300 hover:shadow-lg tracking-wide uppercase"
+                      className="w-full py-3 rounded-xl font-semibold text-[1.4rem] border-2 transition-all duration-300 hover:shadow-lg tracking-wide uppercase mt-auto"
                     >
                       Chọn gói này
                     </button>
                   </div>
                 </div>
               );
-            })
-          ) : (
-            <div className="grid grid-cols-3 gap-6">
-              {dishes.map((dish) => {
-                return (
-                  <div key={dish.id}>
-                    <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                      <div className="relative overflow-hidden h-[22rem]">
-                        <img
-                          src={dish.image}
-                          alt={dish.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <span className="absolute top-3 right-3 bg-white/90 text-[#d0690e] text-[1.1rem] font-semibold px-3 py-1 rounded-full shadow">
-                          {dish.category}
+            })}
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {dishes.map((dish) => {
+              return (
+                <div key={dish.id}>
+                  <div className="h-[35rem] md:h-auto group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="relative overflow-hidden h-[22rem]">
+                      <img
+                        src={dish.image}
+                        alt={dish.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <span className="absolute top-3 right-3 bg-white/90 text-[#d0690e] text-[1.1rem] font-semibold px-3 py-1 rounded-full shadow">
+                        {dish.category}
+                      </span>
+                    </div>
+                    <div className="p-5 flex-1">
+                      <h3 className="text-[1.6rem] line-clamp-1 font-bold text-[#2c1810] mb-1">
+                        {dish.name}
+                      </h3>
+                      <p className="text-[1.3rem] text-[#7a6a5a] leading-relaxed mb-1 line-clamp-2 min-h-[4rem]">
+                        {dish.desc}
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <span className="text-[#d0690e] font-bold text-[1.6rem]">
+                          {formatPrice(dish.price)}
                         </span>
-                      </div>
-                      <div className="p-5">
-                        <h3 className="text-[1.6rem] font-bold text-[#2c1810] mb-1">
-                          {dish.name}
-                        </h3>
-                        <p className="text-[1.3rem] text-[#7a6a5a] leading-relaxed mb-1 min-h-[4rem]">
-                          {dish.desc}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-[#d0690e] font-bold text-[1.6rem]">
-                            {formatPrice(dish.price)}
-                          </span>
-                        </div>
                       </div>
                     </div>
                   </div>
-                );
-              })}
-            </div>
-          )}
-        </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         <DishesModal
           pkg={openDishes}

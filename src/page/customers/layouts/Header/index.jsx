@@ -65,7 +65,7 @@ function Header({ isBg }) {
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur shadow-sm" : "bg-transparent"}`}
       >
         <div
-          className="xl:px-[15rem] sm:px-[5rem] px-[2rem] mx-auto px-6 flex items-center justify-between"
+          className="xl:px-[15rem] sm:px-[5rem] px-[2rem]  px-6 mx-auto flex items-center justify-between"
           style={{ height: 72 }}
         >
           <a href="/" className="flex items-center gap-2 no-underline">

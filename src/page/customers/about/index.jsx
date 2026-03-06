@@ -63,14 +63,13 @@ function AboutPage() {
     <>
       <Header isBg={true} />
 
-      {/* ── HERO ── */}
-      <div className="relative w-full h-[60rem] overflow-hidden">
+      <div className="relative w-full h-[60rem] overflow-hidden ">
         <img
           src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&q=80"
           alt="wedding hall"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center px-[20rem]">
+        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center xl:px-[15rem] sm:px-[5rem] px-[2rem]  px-6">
           <h2 className="text-[2rem] tracking-wide uppercase opacity-80">
             Câu chuyện của chúng tôi
           </h2>
@@ -85,9 +84,9 @@ function AboutPage() {
         </div>
       </div>
 
-      <div className="px-[20rem] w-full h-auto pb-[6rem]">
+      <div className="xl:px-[15rem] sm:px-[5rem] px-[2rem]  px-6 w-full h-auto pb-[6rem]">
         {/* ── THỐNG KÊ ── */}
-        <div className="grid grid-cols-4 gap-6 py-[5rem] border-b border-gray-100">
+        <div className="grid md:grid-col-3 grid-cols-2 lg:grid-cols-4 gap-6 py-[5rem] border-b border-gray-100">
           {stats.map((s, i) => (
             <div
               key={i}
@@ -110,7 +109,7 @@ function AboutPage() {
         </div>
 
         {/* ── CÂU CHUYỆN ── */}
-        <div className="flex items-center gap-[6rem] py-[5rem] border-b border-gray-100">
+        <div className="grid grid-cols-1  md:flex items-center gap-[6rem] py-[5rem] border-b border-gray-100">
           <div className="flex-1">
             <h2 className="text-[2rem] tracking-wide text-[#d0690e] uppercase">
               Hành trình hình thành
@@ -157,7 +156,7 @@ function AboutPage() {
               giá trị cốt lõi
             </h4>
           </div>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {values.map((v, i) => (
               <div
                 key={i}
@@ -185,7 +184,7 @@ function AboutPage() {
               đội ngũ của chúng tôi
             </h4>
           </div>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member, i) => (
               <div
                 key={i}

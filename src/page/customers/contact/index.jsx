@@ -67,7 +67,7 @@ function ContactPage() {
           alt="contact hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/55 flex flex-col items-center justify-center text-white text-center px-[20rem]">
+        <div className="absolute inset-0 bg-black/55 flex flex-col items-center justify-center text-white text-center xl:px-[15rem] sm:px-[5rem] px-[2rem]">
           <h2 className="text-[2rem] tracking-wide uppercase opacity-80">
             Chúng tôi luôn sẵn sàng
           </h2>
@@ -82,8 +82,8 @@ function ContactPage() {
         </div>
       </div>
 
-      <div className="px-[20rem] w-full h-auto pb-[6rem]">
-        <div className="grid grid-cols-4 gap-6 py-[5rem] border-b border-gray-100">
+      <div className="xl:px-[15rem] sm:px-[5rem] px-[2rem] w-full h-auto pb-[6rem]">
+        <div className="grid grid-col-1 md:grid-col-3 lg:grid-cols-4 gap-6 py-[5rem] border-b border-gray-100">
           {contacts.map((c, i) => (
             <div
               key={i}
@@ -106,7 +106,7 @@ function ContactPage() {
           ))}
         </div>
 
-        <div className="flex gap-[5rem] pt-[5rem]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[5rem] pt-[5rem]">
           <div className="flex-1">
             <h2 className="text-[2rem] tracking-wide text-[#d0690e] uppercase">
               Gửi yêu cầu tư vấn
@@ -144,7 +144,7 @@ function ContactPage() {
               </div>
             ) : (
               <div className="flex flex-col gap-5">
-                <div className="flex gap-4">
+                <div className="flex md:flex-row flex-col gap-4">
                   <div className="flex-1 flex flex-col gap-2">
                     <label className="text-[1.3rem] font-semibold text-[#5a4a3a] uppercase tracking-widest">
                       Họ và tên *
@@ -171,7 +171,7 @@ function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex-1 flex flex-col gap-2">
                     <label className="text-[1.3rem] font-semibold text-[#5a4a3a] uppercase tracking-widest">
                       Email
@@ -203,24 +203,20 @@ function ContactPage() {
                     Số lượng khách dự kiến
                   </label>
                   <div className="flex gap-3">
-                    {["Dưới 200", "200 – 350", "350 – 600", "Trên 600"].map(
-                      (opt) => (
-                        <button
-                          key={opt}
-                          onClick={() =>
-                            setForm((p) => ({ ...p, guests: opt }))
-                          }
-                          className={`flex-1 py-3 rounded-xl text-[1.3rem] font-medium border-2 transition-all duration-200
+                    {["Dưới 200", "200 – 350", "trên 350"].map((opt) => (
+                      <button
+                        key={opt}
+                        onClick={() => setForm((p) => ({ ...p, guests: opt }))}
+                        className={`flex-1 py-3 rounded-xl text-[1.3rem] font-medium border-2 transition-all duration-200
                           ${
                             form.guests === opt
                               ? "bg-[#d0690e] text-white border-[#d0690e]"
                               : "bg-white text-[#5a4a3a] border-gray-200 hover:border-[#d0690e] hover:text-[#d0690e]"
                           }`}
-                        >
-                          {opt}
-                        </button>
-                      ),
-                    )}
+                      >
+                        {opt}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -250,7 +246,7 @@ function ContactPage() {
             )}
           </div>
 
-          <div className="w-[50rem] flex flex-col gap-6">
+          <div className="w-auto flex flex-col gap-6">
             <div className="rounded-3xl overflow-hidden shadow-xl h-[40rem]">
               <iframe
                 title="Bản đồ WeddingKPVT"
@@ -282,36 +278,6 @@ function ContactPage() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="bg-orange-50 border border-orange-200 rounded-2xl p-7">
-              <h3 className="text-[1.5rem] font-bold text-[#d0690e] uppercase tracking-widest mb-3">
-                Theo dõi chúng tôi
-              </h3>
-              <div className="flex gap-3">
-                {[
-                  {
-                    label: "Facebook",
-                    icon: "F",
-                    link: "https://www.facebook.com/kien.trung.732841/",
-                  },
-                  { label: "Instagram", icon: "in" },
-                  { label: "YouTube", icon: "YT" },
-                ].map((s) => (
-                  <a
-                    href={s.link ? s.link : "/contact"}
-                    key={s.label}
-                    className="flex-1 flex flex-col items-center gap-1 py-3 rounded-xl border border-orange-200 hover:border-[#d0690e] hover:bg-white transition-all duration-200"
-                  >
-                    <span className="text-[1.6rem] font-bold text-[#d0690e]">
-                      {s.icon}
-                    </span>
-                    <span className="text-[1.1rem] text-gray-500">
-                      {s.label}
-                    </span>
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         </div>
